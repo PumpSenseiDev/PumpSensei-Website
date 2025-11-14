@@ -1,0 +1,426 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Allgemeines Layout ===== */
+body {
+  background: radial-gradient(circle at top, #100024, #000);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Überschriften & Text ===== */
+h1 {
+  color: #9b4cff;
+  font-size: 2.5rem;
+  margin-top: 40px;
+}
+
+p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+/* ===== Stats-Bereich ===== */
+#stats {
+  margin-top: 40px;
+}
+
+#price, #marketcap {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+/* ===== Chart ===== */
+#chart iframe {
+  margin-top: 20px;
+  border: none;
+  border-radius: 12px;
+}
+
+/* ===== Footer ===== */
+footer {
+  margin-top: 50px;
+  opacity: 0.6;
+  font-size: 0.8rem;
+}
+
+/* ===== Hintergrund-Canvas ===== */
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* bleibt im Hintergrund */
+}
+
+/* ===== Maus-Trail / Sensei Energie ===== */
+.trail {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, rgba(155,76,255,0.8), transparent);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: fadeOut 0.4s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+
+/* ===== Header / Hero Section ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  margin-bottom: 60px;
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7) contrast(1.2);
+  transform: scale(1.05);
+  transition: transform 6s ease-in-out;
+  animation: bannerMove 12s infinite alternate ease-in-out;
+}
+
+/* Leichte Banner-Bewegung */
+@keyframes bannerMove {
+  from { transform: scale(1.05) translateY(0px); }
+  to { transform: scale(1.08) translateY(-10px); }
+}
+
+/* Dunkle Overlay für Tiefe */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+}
+
+/* Profilcontainer */
+.profile {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
+/* Profilbild */
+.logo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #9b4cff;
+  box-shadow: 0 0 25px rgba(155,76,255,0.6);
+  margin-bottom: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 40px rgba(155,76,255,0.9);
+}
+
+/* Text */
+.text h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(155,76,255,0.8);
+}
+
+.text p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* Smooth Entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* ===== Navigation ===== */
+.nav {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  background: rgba(16, 0, 36, 0.6);
+  border-radius: 12px;
+  padding: 10px 20px;
+  box-shadow: 0 0 20px rgba(155, 76, 255, 0.4);
+}
+
+.nav a {
+  color: #ccc;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  color: #9b4cff;
+}
+
+/* ===== About Section ===== */
+#about {
+  max-width: 800px;
+  margin: 80px auto;
+  padding: 20px 30px;
+  background: rgba(16, 0, 36, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(155, 76, 255, 0.3);
+}
+
+#about h2 {
+  color: #9b4cff;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+#about p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+/* ===== Roadmap Section ===== */
+#roadmap {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 20px 30px;
+  background: rgba(16, 0, 36, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(155, 76, 255, 0.3);
+}
+
+#roadmap h2 {
+  color: #9b4cff;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.roadmap-item {
+  margin-bottom: 30px;
+  text-align: left;
+  border-left: 3px solid rgba(155, 76, 255, 0.5);
+  padding-left: 15px;
+}
+
+.roadmap-item h3 {
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.roadmap-item p {
+  color: #ccc;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== Footer Social Links ===== */
+.socials {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.socials a {
+  color: #9b4cff;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+.socials a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(155,76,255,0.8);
+}
+
+.placeholder {
+  color: #666;
+  font-style: italic;
+}
+
+/* ===== Small Legal Disclaimer ===== */
+.legal-small {
+  margin-top: 15px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  opacity: 0.6;
+  color: #aaa;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.legal-small strong {
+  color: #9b4cff;
+}
+
+/* ===== Tokenomics Section ===== */
+#tokenomics {
+  margin-top: 80px;
+  padding: 60px 20px;
+  background: rgba(155, 76, 255, 0.05);
+  border-top: 1px solid rgba(155, 76, 255, 0.2);
+}
+
+#tokenomics h2 {
+  font-size: 2rem;
+  color: #9b4cff;
+  text-shadow: 0 0 15px rgba(155, 76, 255, 0.5);
+  margin-bottom: 40px;
+}
+
+.tokenomics-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.token-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(155, 76, 255, 0.3);
+  border-radius: 12px;
+  padding: 20px 30px;
+  width: 160px;
+  box-shadow: 0 0 20px rgba(155, 76, 255, 0.2);
+  transition: 0.3s;
+}
+
+.token-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 30px rgba(155, 76, 255, 0.5);
+}
+
+.token-item h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.token-item p {
+  margin-top: 6px;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.token-note {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+/* ===== Responsive Design (Mobile Friendly) ===== */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    height: 260px;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    border-width: 2px;
+  }
+
+  .text h1 {
+    font-size: 1.6rem;
+  }
+
+  .text p {
+    font-size: 0.9rem;
+  }
+
+  #chart iframe {
+    width: 95%;
+    height: 300px;
+  }
+
+  .nav {
+    padding: 8px 16px;
+  }
+
+  .nav a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 0 10px;
+  }
+
+  .tokenomics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .token-item h3 {
+    font-size: 1rem;
+  }
+
+  .token-item p {
+    font-size: 0.9rem;
+  }
+
+  .legal-small p {
+    font-size: 0.65rem;
+    line-height: 1.2rem;
+    opacity: 0.6;
+    padding: 0 10px;
+  }
+}
+
+
+
+
+
+
+
