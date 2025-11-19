@@ -418,6 +418,74 @@ footer {
   }
 }
 
+/* ===== Dojo / Links Section ===== */
+#dojo {
+  margin-top: 70px;
+  text-align: center;
+  padding: 50px 20px;
+  background: rgba(155, 76, 255, 0.05);
+  border-top: 1px solid rgba(155, 76, 255, 0.15);
+  border-bottom: 1px solid rgba(155, 76, 255, 0.15);
+}
+
+#dojo h2 {
+  color: #9b4cff;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(155, 76, 255, 0.5);
+}
+
+#dojo p {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.dojo-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.dojo-btn {
+  background: linear-gradient(90deg, #9b4cff, #6a1b9a);
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 15px rgba(155, 76, 255, 0.3);
+}
+
+.dojo-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 25px rgba(155, 76, 255, 0.7);
+}
+
+/* ===== Responsive Design for Dojo Section ===== */
+@media (max-width: 600px) {
+  #dojo h2 {
+    font-size: 1.6rem;
+  }
+  #dojo p {
+    font-size: 1rem;
+  }
+  .dojo-btn {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+
+
 
 
 
